@@ -206,13 +206,13 @@
          if(gun == true)
          {
             gun = false;
-            pd.shoot(myBuffer);
+            pd.shoot();
          }
       }
       
       public void enemy()
       {
-         if(count % 40 == 0 && count != 0)
+         if(count % 50 == 0 && count != 0)
          {
             for(int x = 1; x <= matrix.length - 1; x++)
             {
@@ -272,7 +272,7 @@
                   myBuffer.drawImage(explosion.getImage(), matrix[x].getX(), 530, null);
                   myBaseHealth-= 5;
                }
-               matrix[x].setY(matrix[x].getY() + 3);
+               matrix[x].setY(matrix[x].getY() + 2);
             }
             else
                matrix[x] = null;

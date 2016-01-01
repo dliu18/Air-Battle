@@ -87,14 +87,13 @@ public class Boss
    }
    public int Hit(Bullet[] array)
    {
-      for(int x = getX(); x <= getX() + getXWidth(); x++)   //starts at upper left corner(x,y)
-         for(int y = getY(); y <= getY() + getYWidth(); y++)
-            for(int z = 0; z <= array.length -1; z++)
-               if(array[z] != null)
-                  if(distance(x, y, array[z].getX(), array[z].getY()) <= array[z].getRadius() ) //checks every point on the bumper
-                  {
-                     return z;
-                  }            
+      for(int z = 0; z <= array.length -1; z++)
+         if(array[z] != null)
+            if((myX <= array[z].getX()) && (array[z].getX() <= myX + myXWidth) && (myY <= array[z].getY()) && (array[z].getY() <= myY + myYWidth)) //checks every point on the bumper
+            {
+               System.out.println("-----------" + z);
+               return z;
+            }            
       return -1;
    
    } 

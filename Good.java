@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;   
 public class Good extends Airplane
 {
-   private Bullet bullet;
+   private Bullet[] array;
      // constructors
    public Good()         //default constructor
    {
@@ -12,6 +12,7 @@ public class Good extends Airplane
       setX(0);
       setY(460);
       setHealth(100);
+      array = new Bullet[1000];
    }
    public Good(int health)
    {
@@ -21,8 +22,30 @@ public class Good extends Airplane
       setX(0);
       setY(460);
       setHealth(100);
+      array = new Bullet[1000];
    }
     //	 instance methods
+   public Bullet[] getArray()
+   {
+      return array;
+   }
+   public void setArray(Bullet[] setArray)
+   {
+      array = setArray;
+   }
+   public void shoot()
+   {
+   
+      for(int x = 0; x <= array.length - 1; x++)
+      {
+         if(array[x] == null)
+         {
+            array[x] = new Bullet(getX(), 460);
+            return;
+         }
+      } 
+   
+   }
    public boolean hit(Bullet bullet, Graphics myBuffer)
    {
       for(int x = getX(); x <= getX() + getXWidth(); x++)   //starts at upper left corner(x,y)
@@ -81,5 +104,6 @@ public class Good extends Airplane
       return -1;
       
    } 
+   
 }
 
