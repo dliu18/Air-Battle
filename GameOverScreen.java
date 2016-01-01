@@ -13,7 +13,7 @@ public GameOverScreen()
 {
  myImage =  new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
          myBuffer = myImage.getGraphics();
-         Background = new ImageIcon("GameOver.jpg");
+         Background = new ImageIcon("images/GameOver.jpg");
          myBuffer.drawImage(Background.getImage(), 0, 0, 800, 600, null);
 
 }

@@ -123,7 +123,7 @@
        **************************************************************/
       public void draw(Graphics myBuffer) 
       {
-         ImageIcon superair = new ImageIcon("flag.jpg");
+         ImageIcon superair = new ImageIcon("images/flag.jpg");
          myBuffer.drawImage(superair.getImage(), getX(), getY(), getXWidth(), getYWidth(), null);
       } 
       /***************************************************************
@@ -198,7 +198,7 @@
             for(int r = 0; r < 800; r+= 100)
             
             {
-               ImageIcon explosion = new ImageIcon("explosion.jpg");
+               ImageIcon explosion = new ImageIcon("images/explosion.jpg");
             
                myBuffer.drawImage(explosion.getImage(),r, 530, null);
             }

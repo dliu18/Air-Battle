@@ -123,7 +123,7 @@
 		}
        public void draw(Graphics myBuffer) 
       {
-        ImageIcon fire = new ImageIcon("bullet.png");
+        ImageIcon fire = new ImageIcon("images/bullet.png");
          myBuffer.drawImage(fire.getImage(), (int)(myX - myRadius), (int)(myY-myRadius), (int)myDiameter, (int)myDiameter, null);
       }
    }

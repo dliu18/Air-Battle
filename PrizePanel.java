@@ -28,7 +28,7 @@
       private int myBaseHealth = 2000;
       private int measure2 = 0;
       private Boss boss;
-		private int bossHealth = 5;
+		private int bossHealth = 10;
    	
    	   	//constructor   
       public PrizePanel()
@@ -111,7 +111,7 @@
             enemy(); 
          	//check for explosions
             points();
-            if(myHits >= 13000)
+            if(myHits >= 1000)
             {
                for(int x = 0; x <= matrix.length -1; x++)
                   matrix[x] = null;
@@ -161,7 +161,7 @@
             if(base.Hit2(boss.getMatrix()) != -1)
             {
                Bullet[][] Matrix = boss.getMatrix();
-               ImageIcon explosion = new ImageIcon("explosion.jpg");
+               ImageIcon explosion = new ImageIcon("images/explosion.jpg");
                if(Matrix[base.Hit2(Matrix)][0] != null)
                   myBuffer.drawImage(explosion.getImage(), (int)(Matrix[base.Hit2(Matrix)][0].getX() - 5), (int)(Matrix[base.Hit2(Matrix)][0].getY() - 5), null);
                if(Matrix[base.Hit2(Matrix)][1] != null)
@@ -170,14 +170,14 @@
                Matrix[base.Hit2(Matrix)][1] = null;
                myBaseHealth -= 50;
             }
-         
-            if(pd.Hit(boss.getMatrix()) != -1)
+            int hitResult = pd.Hit(boss.getMatrix()); 
+            if(hitResult != -1)
             {
                {
                   Bullet[][] Matrix = boss.getMatrix();
-                  Matrix[pd.Hit(Matrix)][0] = null;
-                  Matrix[pd.Hit(Matrix)][1] = null;
-                  myHealth -= 10;
+                  Matrix[hitResult][0] = null;
+                  Matrix[hitResult][1] = null;
+                  myHealth -= 20;
                }
             }
          
@@ -234,7 +234,7 @@
             if(matrix[k] != null && matrix[k].Hit(array) != -1)
             {
                myHits += 547;
-               ImageIcon explosion = new ImageIcon("explosion.jpg");
+               ImageIcon explosion = new ImageIcon("images/explosion.jpg");
                myBuffer.drawImage(explosion.getImage(), matrix[k].getX() - 5, matrix[k].getY() - 5, null);
                int z = matrix[k].Hit(array);
                array[z] = null;
@@ -253,7 +253,7 @@
             int z = boss.Hit(array);
             myHits += 809;
 				bossHealth -= 1; 
-            ImageIcon explosion = new ImageIcon("explosion.jpg");
+            ImageIcon explosion = new ImageIcon("images/explosion.jpg");
             myBuffer.drawImage(explosion.getImage(), (int)(array[z].getX()), (int)(array[z].getY() - 10), null);
             array[z] = null;
                  
@@ -268,7 +268,7 @@
             {
                if(base.Hit(matrix, matrix[x], myBuffer) == true)
                {
-                  ImageIcon explosion = new ImageIcon("explosion.jpg");
+                  ImageIcon explosion = new ImageIcon("images/explosion.jpg");
                   myBuffer.drawImage(explosion.getImage(), matrix[x].getX(), 530, null);
                   myBaseHealth-= 5;
                }

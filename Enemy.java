@@ -106,7 +106,7 @@
       }
       public void draw(Graphics  myBuffer) 
       {
-         ImageIcon superair = new ImageIcon("enemy.png");
+         ImageIcon superair = new ImageIcon("images/enemy.png");
          myBuffer.drawImage(superair.getImage(), getX(), getY(), getXWidth(), getYWidth(), null);
       }
    	

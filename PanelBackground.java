@@ -87,19 +87,19 @@
          }
          for(int x = 1; x <= 320; x++)
          {
-            ImageIcon Background = new ImageIcon("cow1.png"); 
+            ImageIcon Background = new ImageIcon("images/cow1.png"); 
             myBuffer.drawImage(Background.getImage(), (int)( Math.random()*401 + 130), (int)(Math.random() * 18001 + 200), 25, 25, null);
          
          }
          for(int x = 1; x <= 320; x++)
          {
-            ImageIcon Background = new ImageIcon("cow2.png"); 
+            ImageIcon Background = new ImageIcon("images/cow2.png"); 
             myBuffer.drawImage(Background.getImage(), (int)(Math.random()*401 + 130), (int)( Math.random() * 18001 + 2200), 25, 25, null);
          
          }
          for(int x = 1; x <= 320; x++)
          {
-            ImageIcon Background = new ImageIcon("cow3.png"); 
+            ImageIcon Background = new ImageIcon("images/cow3.png"); 
             myBuffer.drawImage(Background.getImage(),(int)( Math.random()*401 + 130),(int)( Math.random() * 18001 + 4200), 25, 25, null);
          
          }

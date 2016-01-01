@@ -44,7 +44,7 @@
       
          myImage =  new BufferedImage(800, 600, BufferedImage.TYPE_INT_RGB);
          myBuffer = myImage.getGraphics();
-         Background = new ImageIcon("background.jpg");
+         Background = new ImageIcon("images/background.jpg");
          myBuffer.drawImage(Background.getImage(), 0, 0, 800, 600, null);
          setLayout(new GridLayout(2, 1, 0, 500));
          
@@ -212,7 +212,7 @@
             scoreboard.setBaseHealth(panel.getBaseHealth());
             if(panel.getBossHealth() == 0)
             {
-               Background = new ImageIcon("Win.jpg");
+               Background = new ImageIcon("images/Win.jpg");
                myBuffer.drawImage(Background.getImage(), 0, 0, 800, 600, null);	
                remove(panel);
                remove(scoreboard);
@@ -244,7 +244,7 @@
             {
                remove(panel);
                remove(scoreboard);
-               Background = new ImageIcon("GameOver.jpg");
+               Background = new ImageIcon("images/GameOver.jpg");
                myBuffer.drawImage(Background.getImage(), 0, 0, 800, 600, null);	
                start.setText("Start Over");
                start.setBackground(Color.GRAY);
